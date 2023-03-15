@@ -81,7 +81,6 @@ UTXO_NODE_BANNED_UNTIL = Gauge(
 UTXO_NODE_SERVER_VERSION = Gauge(f"{METRIC_PREFIX}_server_version", "The server version", labelnames=["blockchain"])
 UTXO_NODE_PROTOCOL_VERSION = Gauge(f"{METRIC_PREFIX}_protocol_version", "The protocol version of the server", labelnames=["blockchain"])
 
-UTXO_NODE_SIZE_ON_DISK = Gauge(f"{METRIC_PREFIX}_size_on_disk", "Estimated size of the block and undo files", labelnames=["blockchain"])
 
 UTXO_NODE_VERIFICATION_PROGRESS = Gauge(
     f"{METRIC_PREFIX}_verification_progress", "Estimate of verification progress [0..1]", labelnames=["blockchain"]
