@@ -43,9 +43,6 @@ UTXO_NODE_MEMPOOL_UNBROADCAST = Gauge(
 UTXO_NODE_LATEST_BLOCK_HEIGHT = Gauge(
     f"{METRIC_PREFIX}_latest_block_height", "Height or index of latest block", labelnames=["blockchain"]
 )
-UTXO_NODE_LATEST_BLOCK_WEIGHT = Gauge(
-    f"{METRIC_PREFIX}_latest_block_weight", "Weight of latest block according to BIP 141", labelnames=["blockchain"]
-)
 UTXO_NODE_LATEST_BLOCK_SIZE = Gauge(f"{METRIC_PREFIX}_latest_block_size", "Size of latest block in bytes", labelnames=["blockchain"])
 UTXO_NODE_LATEST_BLOCK_TXS = Gauge(
     f"{METRIC_PREFIX}_latest_block_txs", "Number of transactions in latest block", labelnames=["blockchain"]
