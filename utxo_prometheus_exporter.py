@@ -108,7 +108,7 @@ def getblockstats(block_hash: str):
         block = exec_rpc_call(
             "getblockstats",
             block_hash,
-            ["total_size", "total_weight", "totalfee", "txs", "height", "ins", "outs", "total_out"],
+            ["total_size", "totalfee", "txs", "height", "ins", "outs", "total_out"],
         )
     except Exception:
         logger.exception("Failed to retrieve block " + block_hash + " statistics from node.")
@@ -171,8 +171,6 @@ def fetch_blockchaininfo() -> None:
                 blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(latest_blockstats["txs"])
             UTXO_NODE_LATEST_BLOCK_HEIGHT.labels(
                 blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(latest_blockstats["height"])
-            UTXO_NODE_LATEST_BLOCK_WEIGHT.labels(
-                blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(latest_blockstats["total_weight"])
             UTXO_NODE_LATEST_BLOCK_INPUTS.labels(
                 blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(latest_blockstats["ins"])
             UTXO_NODE_LATEST_BLOCK_OUTPUTS.labels(
