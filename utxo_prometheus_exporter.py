@@ -159,7 +159,6 @@ def fetch_blockchaininfo() -> None:
     if blockchaininfo is not None:
         UTXO_NODE_BLOCKS.labels(blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(blockchaininfo["blocks"])
         UTXO_NODE_DIFFICULTY.labels(blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(blockchaininfo["difficulty"])
-        UTXO_NODE_SIZE_ON_DISK.labels(blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(blockchaininfo["size_on_disk"])
         UTXO_NODE_VERIFICATION_PROGRESS.labels(blockchain=UTXO_NODE_BLOCKCHAIN_NAME).set(
             blockchaininfo["verificationprogress"]
         )
